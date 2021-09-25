@@ -10,6 +10,9 @@
 *OBS esse projeto é totalmente free e usa tecnologias open source tem os fins de estudo*
 
 Para apontar pra um recurso da AWS pelo CLI execute 
+
 >  aws --endpoint-url=http://localhost:4566 [recurso] [operacao]
+
 Ex:.
+
 >  aws --endpoint-url=http://localhost:4566 s3 list-buckets
