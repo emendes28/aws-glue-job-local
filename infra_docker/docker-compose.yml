@@ -1,0 +1,29 @@
+version: '3'
+services:
+  localstack:
+    extends:
+      file: localstack.yml
+      service: localaws
+  aws_glue_jupyter:
+    extends:
+      file: awsglue.yml
+      service: gluejob
+  zookeeper:
+    extends:
+      file: zookeeper.yml
+      service: manager_kafka
+  kafka:
+    extends:
+      file: kafka.yml
+      service: kafka_source 
+    depends_on:
+      - zookeeper
+  kafdrop:
+    extends:
+      file: kafdrop.yml
+      service: kafka_web_ui
+    depends_on:
+      - kafka
+networks: 
+  broker-kafka:
+    driver: bridge  

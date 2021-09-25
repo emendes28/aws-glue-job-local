@@ -1,0 +1,9 @@
+services:
+  kafka_web_ui:
+    image: obsidiandynamics/kafdrop:latest
+    networks: 
+      - broker-kafka
+    ports:
+      - 19000:9000
+    environment:
+      KAFKA_BROKERCONNECT: kafka:29092

@@ -1,0 +1,9 @@
+services:
+  gluejob:
+    image: amazon/aws-glue-libs:glue_libs_1.0.0_image_01 
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+    volumes:
+      - "~/.aws:/root/.aws:ro"
+    command: /home/jupyter/jupyter_start.sh
